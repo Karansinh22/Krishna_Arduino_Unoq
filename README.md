@@ -243,34 +243,29 @@ FINAL_UNO_Q/
 ## 🚀 Installation & Usage
 
 ### Prerequisites
-- Arduino UNO Q (ABX00087) with Arduino IDE or CLI
+- **Arduino UNO Q** hardware board
+- **Arduino App Lab** installed on host computer / board
 - Python 3.10+ on the UNO Q Linux MPU
-- GStreamer installed for webcam capture
-- RPLiDAR A1 connected to `/dev/ttyUSB0`
-- Dual Logitech Brio 100 webcams at `/dev/video2` and `/dev/video4`
+- GStreamer installed for webcam video capture
+- RPLiDAR A1 connected via USB (`/dev/ttyUSB0`)
+- Dual Logitech Brio 100 webcams connected at `/dev/video2` and `/dev/video4`
 
-### 1. Flash the MCU Firmware
-```bash
-# Using Arduino CLI
-arduino-cli compile --fqbn arduino:zephyr:uno_q sketch/
-arduino-cli upload --fqbn arduino:zephyr:uno_q -p /dev/ttyACM0 sketch/
+---
+
+### 1. Launching via Arduino App Lab
+1. Open **Arduino App Lab**.
+2. Load / import the `FINAL_UNO_Q` project folder.
+3. **Arduino App Lab** automatically parses `app.yaml`, compiles & flashes the `sketch/sketch.ino` firmware to the MCU, installs Python requirements, and executes `python/main.py` on the MPU.
+4. Click **Run App** in Arduino App Lab.
+
+---
+
+### 2. Accessing the Web Dashboard
+Open any web browser on the same local network and navigate to:
+```text
+http://<UNO-Q-IP>:8080
 ```
-
-### 2. Install Python Dependencies
-```bash
-cd python/
-pip install -r requirements.txt
-```
-
-### 3. Run the Application
-```bash
-python3 python/main.py
-```
-
-### 4. Open the Dashboard
-Navigate to `http://<UNO-Q-IP>:8080` in any browser on the same network.
-
-> **Tip:** Find the UNO Q's IP address with `hostname -I`
+> **Tip:** Find your board's IP address by running `hostname -I` in the terminal or viewing it directly in **Arduino App Lab**.
 
 ---
 
