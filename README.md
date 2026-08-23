@@ -242,13 +242,13 @@ FINAL_UNO_Q/
 
 ## 🚀 Installation & Usage
 
-### Prerequisites
+### Prerequisites & Stack Overview
 - **Arduino UNO Q** hardware board
-- **Arduino App Lab** installed on host computer / board
-- Python 3.10+ on the UNO Q Linux MPU
-- GStreamer installed for webcam video capture
-- RPLiDAR A1 connected via USB (`/dev/ttyUSB0`)
-- Dual Logitech Brio 100 webcams connected at `/dev/video2` and `/dev/video4`
+- **Arduino App Lab** (Application Launcher environment)
+- **Python 3.10+** (Runs backend logic & Flask Web Server)
+- **GStreamer (`gst-launch-1.0`)** — Low-level Linux utility used for reading V4L2 USB webcam streams (`/dev/video2` & `/dev/video4`). *(Note: If webcams or GStreamer are missing, built-in Pillow fallback generates synthetic camera frames automatically).*
+- **RPLiDAR A1** connected via USB (`/dev/ttyUSB0`) *(Includes simulation fallback if disconnected)*.
+- **Dual Logitech Brio 100 Webcams** at `/dev/video2` and `/dev/video4`.
 
 ---
 
