@@ -1,0 +1,9 @@
+name: Autonomous Agrobot
+description: >
+  AI-powered precision weeding robot for selective herbicide application.
+  Uses YOLOv8 OBB detection, RPLiDAR A1 mapping, and a 4-axis servo spray arm
+  controlled by the Arduino UNO Q.
+ports:
+  - 8080
+bricks: []
+icon: 🌾
